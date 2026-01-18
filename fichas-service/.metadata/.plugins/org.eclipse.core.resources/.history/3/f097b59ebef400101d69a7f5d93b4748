@@ -1,0 +1,17 @@
+package com.epn.odontologia.fichas.models;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Entity
+@Table(name = "presupuestos")
+@Data
+public class Presupuesto {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    private Double costo; // Valor total del tratamiento
+    private String detalleTratamiento;
+    private Boolean aprobado;
+}

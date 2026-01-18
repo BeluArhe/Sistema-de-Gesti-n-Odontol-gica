@@ -1,0 +1,5 @@
+package com.epn.odontologia.fichas.models;
+
+public class Diagnostico {
+
+}

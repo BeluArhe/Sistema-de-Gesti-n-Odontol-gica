@@ -1,0 +1,5 @@
+package com.epn.odontologia.fichas.controllers;
+
+public class FichaController {
+
+}
