@@ -1,0 +1,7 @@
+com\epn\odontologia\odontograma\repositories\OdontogramaRepository.class
+com\epn\odontologia\odontograma\models\Diente.class
+com\epn\odontologia\odontograma\repositories\DienteRepository.class
+com\epn\odontologia\odontograma\models\Odontograma.class
+com\epn\odontologia\odontograma\controllers\OdontogramaController.class
+com\epn\odontologia\odontograma\OdontogramaServiceApplication.class
+com\epn\odontologia\odontograma\services\OdontogramaService.class
