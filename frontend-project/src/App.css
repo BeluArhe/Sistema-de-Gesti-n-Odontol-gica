@@ -453,3 +453,44 @@ body {
   background-color: #fff;
   margin-top: auto;
 }
+
+/* =========================================
+   Estilos del Login
+   ========================================= */
+.login-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+}
+
+.login-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.login-header {
+  margin-bottom: 30px;
+}
+
+.login-header h2 {
+  color: var(--primary-color);
+  margin: 10px 0 5px 0;
+}
+
+.error-msg {
+  color: #dc3545;
+  background-color: #ffebee;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
