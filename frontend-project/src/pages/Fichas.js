@@ -1,6 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
 import { getFichasByPaciente, createFicha } from "../services/fichasService";
-// 1. IMPORTAMOS EL COMPONENTE ODONTOGRAMA
 import Odontograma from "./Odontograma"; 
 
 function Fichas({ paciente }) {
@@ -8,7 +7,7 @@ function Fichas({ paciente }) {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
   const [fichaSeleccionada, setFichaSeleccionada] = useState(null);
   
-  // 2. NUEVO ESTADO PARA SABER SI ESTAMOS VIENDO EL ODONTOGRAMA
+  // Estado para controlar la vista
   const [viendoOdontograma, setViendoOdontograma] = useState(false); 
 
   const [motivoConsulta, setMotivoConsulta] = useState("");
@@ -30,7 +29,6 @@ function Fichas({ paciente }) {
     cargarFichas();
   }, [cargarFichas]);
 
-  /* --- Lógica del formulario (Igual que antes) --- */
   const limpiarFormulario = () => {
     setMotivoConsulta("");
     setDiagnostico("");
@@ -66,18 +64,19 @@ function Fichas({ paciente }) {
   /* =======================================================
      3. VISTA CONDICIONAL: SI ESTAMOS EN ODONTOGRAMA
      ======================================================= */
-  if (viendoOdontograma && fichaSeleccionada) {
+  if (viendoOdontograma) {
     return (
       <div className="fichas-container">
         <button 
           className="btn btn-back" 
           onClick={() => setViendoOdontograma(false)}
+          style={{ marginBottom: '15px' }}
         >
           ← Volver al detalle de la Ficha
         </button>
         
-        {/* Renderizamos el Odontograma pasándole la ficha actual */}
-        <Odontograma ficha={fichaSeleccionada} />
+        {/* CORRECCIÓN: Pasamos pacienteId={paciente.id} */}
+        <Odontograma pacienteId={paciente.id} />
       </div>
     );
   }
@@ -88,9 +87,6 @@ function Fichas({ paciente }) {
   if (!paciente) return null;
 
   return (
-    // Nota: Quitamos "fichas-container" de aquí si Fichas se renderiza DENTRO 
-    // de Pacientes (que ya tiene container), o lo dejamos si queremos doble borde.
-    // Para limpieza visual, usaremos un div simple aquí.
     <div> 
       <div className="fichas-header">
         <h3>
@@ -157,7 +153,7 @@ function Fichas({ paciente }) {
               className="btn btn-action" 
               onClick={() => {
                   setFichaSeleccionada(f);
-                  setViendoOdontograma(false); // Aseguramos resetear vista
+                  setViendoOdontograma(false); 
               }}
             >
               Ver Detalle
@@ -185,7 +181,7 @@ function Fichas({ paciente }) {
           </div>
 
           <div style={{marginTop: '20px', textAlign: 'right'}}>
-            {/* 4. BOTÓN QUE ACTIVA LA VISTA DEL ODONTOGRAMA */}
+            {/* Botón que activa la vista */}
             <button
                 className="btn btn-primary"
                 onClick={() => setViendoOdontograma(true)}

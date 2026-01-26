@@ -26,9 +26,9 @@ public class OdontogramaController {
     /**
      * Obtiene todos los odontogramas de un paciente específico
      */
-    @GetMapping("/ficha/{fichaId}")
-    public List<Odontograma> listarPorPaciente(@PathVariable Long fichaId) {
-        return odontogramaService.obtenerPorFicha(fichaId);
+    @GetMapping("/paciente/{pacienteId}")
+    public List<Odontograma> listarPorPaciente(@PathVariable Long pacienteId) {
+        return odontogramaService.obtenerPorPaciente(pacienteId);
     }
 
     /**

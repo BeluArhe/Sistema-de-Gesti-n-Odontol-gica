@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface OdontogramaRepository extends JpaRepository<Odontograma, Long> {
-    List<Odontograma> findByFichaId(Long fichaId);
+    List<Odontograma> findByPacienteId(Long pacienteId);
 }

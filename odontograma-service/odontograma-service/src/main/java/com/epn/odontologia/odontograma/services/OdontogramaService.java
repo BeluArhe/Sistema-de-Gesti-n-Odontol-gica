@@ -32,8 +32,8 @@ public class OdontogramaService {
      * Obtiene todos los odontogramas de un paciente específico.
      * Útil para ver el historial de cambios en la dentición del paciente.
      */
-    public List<Odontograma> obtenerPorFicha(Long fichaId) {
-        return odontogramaRepo.findByFichaId(fichaId);
+    public List<Odontograma> obtenerPorPaciente(Long pacienteId) {
+        return odontogramaRepo.findByPacienteId(pacienteId);
     }
 
     /**

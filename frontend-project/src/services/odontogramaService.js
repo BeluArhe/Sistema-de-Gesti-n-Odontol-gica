@@ -1,16 +1,24 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8083/api/odontogramas"; // Ajusta a tu puerto real
+// Ajusta el puerto si tu Spring Boot corre en otro
+const API_URL = "http://localhost:8083/api/odontogramas";
 
-export const getOdontogramaByFicha = (fichaId) => {
-  return axios.get(`${API_URL}/ficha/${fichaId}`);
+// Obtener por ID de paciente (Coincide con @GetMapping("/paciente/{pacienteId}"))
+export const getOdontogramaByPaciente = (pacienteId) => {
+  return axios.get(`${API_URL}/paciente/${pacienteId}`);
 };
 
-export const createOdontograma = (data) => {
-  return axios.post(API_URL, data);
+// Crear (Coincide con @PostMapping("/crear"))
+export const createOdontograma = (odontograma) => {
+  return axios.post(`${API_URL}/crear`, odontograma);
 };
 
-// --- AGREGA ESTO ---
-export const updateOdontograma = (id, data) => {
-  return axios.put(`${API_URL}/${id}`, data);
+// Actualizar (Coincide con @PutMapping("/{id}"))
+export const updateOdontograma = (id, odontograma) => {
+  return axios.put(`${API_URL}/${id}`, odontograma);
+};
+
+// Actualizar solo un diente (Coincide con @PutMapping("/dientes/{dienteId}"))
+export const updateDiente = (dienteId, diente) => {
+  return axios.put(`${API_URL}/dientes/${dienteId}`, diente);
 };
