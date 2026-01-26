@@ -13,13 +13,14 @@ public class Odontograma {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private Long pacienteId;
+    private Long fichaId;
     private Date fechaCreacion;
     private Date fechaActualizacion;
     private String observacionesGenerales;
     
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "odontogramaId")
+    
     private List<Diente> dientes;
     
     public Long getId() {
@@ -31,11 +32,11 @@ public class Odontograma {
     }
     
     public Long getPacienteId() {
-        return pacienteId;
+        return fichaId;
     }
     
     public void setPacienteId(Long pacienteId) {
-        this.pacienteId = pacienteId;
+        this.fichaId = pacienteId;
     }
     
     public Date getFechaCreacion() {

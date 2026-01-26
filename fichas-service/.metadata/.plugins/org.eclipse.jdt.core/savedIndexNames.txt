@@ -1,3 +1,0 @@
-INDEX VERSION 1.134+D:\6to Semestre\APP WEB\IIB\Proyecto\Sistema-de-Gesti-n-Odontol-gica\fichas-service\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
-3180605298.index

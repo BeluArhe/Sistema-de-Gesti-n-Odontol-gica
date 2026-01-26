@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*; // Importa todas las anotacion
 import com.epn.odontologia.fichas.models.FichaEndodoncia;
 import com.epn.odontologia.fichas.services.FichaService;
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/fichas")
 public class FichaController {
